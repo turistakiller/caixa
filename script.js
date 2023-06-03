@@ -14,3 +14,47 @@ function redirectToExpenses(event) {
     alert("Credenciais inválidas. Por favor, verifique seu CPF e senha.");
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Exibe o loader
+  showLoader();
+
+  // Simula um atraso de 3 segundos
+  setTimeout(function() {
+    const options = {
+      chart: {
+        type: 'bar',
+        height: 300
+      },
+      series: [{
+        name: 'Gastos',
+        data: [1200.42, 1187.37, 1137.04, 1220.18, 1474.04, 0]
+      }],
+      xaxis: {
+        categories: ['01/05', '02/05', '03/05', '04/05', '05/05', '06/05']
+      },
+      yaxis: {
+        title: {
+          text: 'Valor'
+        }
+      },
+      
+    };
+
+    const chart = new ApexCharts(document.querySelector('#chart'), options);
+    chart.render();
+
+    // Esconde o loader após a renderização do gráfico
+    hideLoader();
+  }, 1500);
+});
+
+function showLoader() {
+  const loader = document.querySelector('.loader');
+  loader.style.display = 'block';
+}
+
+function hideLoader() {
+  const loader = document.querySelector('.loader');
+  loader.style.display = 'none';
+}
