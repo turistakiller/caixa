@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>fatura</title>
+  <title>Histórico de Compras</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="pagina-gastos.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.27.1"></script>
+  <script src="script.js"></script>
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="logo-visa.svg" alt="Logo da Caixa" width="100">
+        <span>4593.xxxx.xxxx.5630</span>
+      </div>
+      <div class="titulo">
+        <p>cartões CAIXA</p>
+      </div>
+    </div>
+  </header>
   <div class="container">
-    <p class="message">Olá, <strong>Francisco Araújo Dos Santos</strong></p>
-    <p class="message">O sistema está indisponível no momento. Tente novamente mais tarde.</p>
+    <div class="loader"></div>
+    <div class="chart-container">
+      <div id="chart"></div>
+    </div>
   </div>
 </body>
 </html>
