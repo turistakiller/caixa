@@ -22,7 +22,7 @@ body {
 
 h1 {
   text-align: center;
-  background-image: linear-gradient(to right, #0066B3, #00bfff);
+  background: #FFFFFF;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
