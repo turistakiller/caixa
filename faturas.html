@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" type="text/css" href="faturas.css">
- <style>
+  <style>
     body {
       display: flex;
       justify-content: center;
@@ -32,13 +32,53 @@
       text-decoration: none;
       font-weight: bold;
     }
-    </style>
+
+    .date-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .date-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      width: 120px;
+      text-align: center;
+      background-color: #008000;
+      color: #FFFFFF;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .status {
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
- <div class="content">
-    <img class="responsive-image" src="bg-img.jpg" alt="Imagem Responsiva">
-    <br>
-    <a class="red-button" href="https://pay.infinitepay.io/apostila-java-script/144,49/">COMPRAR</a>
+  <div class="content">
+    <div class="date-column">
+      <div class="date-item">
+        <div class="date">07/2023 paga</div>
+        <div class="status">Paga</div>
+      </div>
+      <div class="date-item">
+        <div class="date">08/2023 paga</div>
+        <div class="status">Paga</div>
+      </div>
+      <div class="date-item">
+        <div class="date">10/2023 paga</div>
+        <div class="status">Paga</div>
+      </div>
+      <div class="date-item">
+        <div class="date">11/2023 pendente</div>
+        <div class="status">Pendente</div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
