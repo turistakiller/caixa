@@ -6,9 +6,9 @@ function redirectToExpenses(event) {
   var senha = document.getElementById("senha").value;
   
   // Verifica se as credenciais são válidas
-  if (cpf === "05972070111" && senha === "waslley2023") {
+  if (cpf === "04424278166" && senha === "moi1992") {
     // Redireciona para a página de gastos se as credenciais forem válidas
-    window.location.href = "cursos.html";
+    window.location.href = "faturas.html";
   } else {
     // Exibe uma mensagem de erro caso as credenciais sejam inválidas
     alert("Credenciais inválidas. Por favor, verifique seu CPF e senha.");
