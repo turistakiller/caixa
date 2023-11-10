@@ -9,10 +9,10 @@
     body {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #FFFFFF;
+      background-color: #E1E1E6;
     }
 
     .content {
@@ -33,32 +33,29 @@
       font-weight: bold;
     }
 
-    .date-column {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
+    .date-list {
+      list-style: none;
+      padding: 0;
+      text-align: center;
     }
 
     .date-item {
-      margin-bottom: 10px;
       background-color: #008000;
       color: #FFFFFF;
       padding: 5px;
       border-radius: 5px;
-      text-align: center;
-      width: 120px;
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
   <div class="content">
-    <div class="date-column">
-      <div class="date-item">07/2023 paga</div>
-      <div class="date-item">08/2023 paga</div>
-      <div class="date-item">10/2023 paga</div>
-      <div class="date-item">11/2023 pendente</div>
-    </div>
+    <ul class="date-list">
+      <li class="date-item">07/2023 paga</li>
+      <li class="date-item">08/2023 paga</li>
+      <li class="date-item">10/2023 paga</li>
+      <li class="date-item">11/2023 pendente</li>
+    </ul>
   </div>
 </body>
 </html>
