@@ -24,6 +24,10 @@ h1 {
   width: 100%;
 }
 
+img {
+  width: 100%;
+}
+
 form {
   display: flex;
   flex-direction: column;
