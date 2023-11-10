@@ -42,13 +42,33 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       margin: 10px 0;
+      position: relative;
+    }
+
+    .blink {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      margin-left: 5px;
+      animation: blink 1s infinite alternate;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     .date-list {
       list-style: none;
       padding: 0;
       text-align: center;
-      width: 100%;
+       width: 100%;
     }
 
     .date-item {
@@ -63,7 +83,6 @@
     .pendente {
       background-color: red;
     }
-
   </style>
 </head>
 <body>
@@ -74,7 +93,7 @@
     <p class="info">Endereço: QD 20 CONJ I LT 05/ B</p>
     <p class="info">Fim da Vigência: 26/04/2024</p>
     <p class="info">Plano: 740 MEGA FIDELIZADO (Y91Z06G7)</p>
-    <div class="status">STATUS: Normal</div>
+    <div class="status">STATUS: Normal <span class="blink"></span></div>
   </div>
 
   <ul class="date-list">
