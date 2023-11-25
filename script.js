@@ -6,7 +6,7 @@ function redirectToExpenses(event) {
   var senha = document.getElementById("senha").value;
   
   // Verifica se as credenciais são válidas
-  if (cpf === "04424278166" && senha === "04424278166") {
+  if (cpf === "57422122161" && senha === "57422122161") {
     // Redireciona para a página de gastos se as credenciais forem válidas
     window.location.href = "faturas.html";
   } else {
