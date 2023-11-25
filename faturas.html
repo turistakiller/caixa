@@ -16,6 +16,7 @@
     }
 
     .container {
+      width: 100%;
       max-width: 600px;
       margin: 20px;
       padding: 20px;
@@ -62,6 +63,22 @@
       text-align: center;
       color: #004466;
       margin-top: 20px;
+    }
+
+    /* Media queries para tornar a página responsiva */
+    @media screen and (max-width: 600px) {
+      .header h1 {
+        font-size: 28px;
+      }
+      .info {
+        font-size: 14px;
+      }
+      .deposit-message {
+        font-size: 16px;
+      }
+      .timer {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
