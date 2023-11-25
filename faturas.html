@@ -3,21 +3,64 @@
 <head>
   <title>PerfectPay</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" type="text/css" href="faturas.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <style>
-    /* Seus estilos CSS existentes aqui */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-    /* ... */
+    .container {
+      max-width: 600px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-    /* Novos estilos para o temporizador */
+    .header {
+      background-color: #004466;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .info {
+      margin: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .balance-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .deposit-message {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
     .timer {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
-      margin-top: 20px;
+      color: #004466;
     }
   </style>
 </head>
@@ -25,27 +68,23 @@
   <div class="container">
     <div class="header">
       <h1>PerfectPay</h1>
-      <!-- Seção para o saldo e mensagem de depósito -->
       <div class="balance-section">
         <div class="balance">
-          <p class="info" style="text-align: center;">Saldo: R$ 100,00</p>
+          <p class="info">Saldo: R$ 100,00</p>
         </div>
         <div class="deposit-message">
-          <p style="text-align: center;">Deposite R$ 50 reais para desbloquear e sacar</p>
+          <p>Deposite R$ 50 reais para desbloquear e sacar</p>
         </div>
         <div class="timer" id="timer"></div>
       </div>
-      <!-- Fim da seção de saldo e mensagem de depósito -->
     </div>
   </div>
 
   <script>
-    // Função para atualizar o temporizador
     function updateTimer() {
-      const endTime = new Date().getTime() + (48 * 60 * 60 * 1000); // Define o tempo final como 48 horas a partir de agora
+      const endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
       const timerElement = document.getElementById('timer');
 
-      // Atualiza o temporizador a cada segundo
       const interval = setInterval(function() {
         const now = new Date().getTime();
         const distance = endTime - now;
@@ -56,7 +95,6 @@
 
         timerElement.innerHTML = `Tempo restante: ${hours}h ${minutes}m ${seconds}s`;
 
-        // Quando o temporizador chegar a zero, exibe uma mensagem e limpa o intervalo
         if (distance <= 0) {
           clearInterval(interval);
           timerElement.innerHTML = 'Tempo esgotado';
@@ -64,7 +102,6 @@
       }, 1000);
     }
 
-    // Inicializa o temporizador ao carregar a página
     window.onload = function() {
       updateTimer();
     };
