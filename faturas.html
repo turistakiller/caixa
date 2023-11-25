@@ -42,7 +42,7 @@
       margin: 10px;
       font-weight: bold;
       font-size: 13px;
-      TEXT-ALIGN: justify;
+      text-align: justify;
     }
 
     .status {
@@ -93,29 +93,35 @@
     .pendente {
       background-color: #008000;
     }
+
+    /* Novos estilos para a seção de saldo e mensagem de depósito */
+    .balance-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .balance {
+      margin-bottom: 10px;
+    }
+
+    .deposit-message {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Informações do Cliente</h1>
-      <p class="info">Assegura: WASLEY ARAUJO DOS SANTOS</p>
-      <p class="info">Nome: MOISES ARAÚJO DOS SANTOS</p>
-      <p class="info">CPF: 044.242.781-66</p>
-      <p class="info">Endereço: QD 20 CONJ I LT 05/ B</p>
-      <p class="info">Fim da Vigência: 26/04/2024</p>
-      <p class="info">Plano: 740 MEGA FIDELIZADO (Y91Z06G7)</p>
-      <div class="status">STATUS: Normal <span class="blink"></span></div>
-    </div>
-
-    <ul class="date-list">
-      <li class="date-item">07/2023 <span>paga</span></li>
-      <li class="date-item">08/2023 <span>paga</span></li>
-      <li class="date-item">10/2023 <span>paga</span></li>
-      <a href="https://pay.infinitepay.io/agetelecomltda-moises/126,85/">
-        <li class="date-item pendente">11/2023 <span>paga</span></li>
-      </a>
-    </ul>
+      <!-- Seção para o saldo e mensagem de depósito -->
+      <div class="balance-section">
+        <div class="balance">
+          <p class="info" style="text-align: center;">Saldo: R$ 100,00</p>
+        </div>
+        <div class="deposit-message">
+          <p style="text-align: center;">Deposite 50 reais para desbloquear e sacar</p>
+        </div>
+      </div>
+      <!-- Fim da seção de saldo e mensagem de depósito -->
   </div>
 </body>
 </html>
