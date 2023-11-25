@@ -1,95 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faturas</title>
+  <title>PerfectPay</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" type="text/css" href="faturas.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
-      font-family: 'Montserrat', sans-serif; /* Usando a fonte Montserrat */
-    }
+    /* Seus estilos CSS existentes aqui */
 
-    .container {
-      max-width: 600px;
-      margin: 20px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+    /* ... */
 
-    .header {
-      background-color: #004466;
-      color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .header h1 {
-      font-size: 32px;
-      margin: 0;
-    }
-
-    .info {
-      margin: 10px;
+    /* Novos estilos para o temporizador */
+    .timer {
+      font-size: 24px;
       font-weight: bold;
-      font-size: 16px;
-      text-align: justify;
-    }
-
-    .status {
-      background-color: #008000;
-      color: #FFFFFF;
-      padding: 10px;
-      border-radius: 5px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      margin: 10px 0;
-      position: relative;
-    }
-
-    .blink {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background-color: red;
-      border-radius: 50%;
-      margin-left: 5px;
-      animation: blink 1s infinite alternate;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .balance-section {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .balance {
-      margin-bottom: 20px;
-    }
-
-    .deposit-message {
-      font-weight: bold;
-      font-size: 18px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -105,9 +33,41 @@
         <div class="deposit-message">
           <p style="text-align: center;">Deposite R$ 50 reais para desbloquear e sacar</p>
         </div>
+        <div class="timer" id="timer"></div>
       </div>
       <!-- Fim da seção de saldo e mensagem de depósito -->
     </div>
   </div>
+
+  <script>
+    // Função para atualizar o temporizador
+    function updateTimer() {
+      const endTime = new Date().getTime() + (48 * 60 * 60 * 1000); // Define o tempo final como 48 horas a partir de agora
+      const timerElement = document.getElementById('timer');
+
+      // Atualiza o temporizador a cada segundo
+      const interval = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerElement.innerHTML = `Tempo restante: ${hours}h ${minutes}m ${seconds}s`;
+
+        // Quando o temporizador chegar a zero, exibe uma mensagem e limpa o intervalo
+        if (distance <= 0) {
+          clearInterval(interval);
+          timerElement.innerHTML = 'Tempo esgotado';
+        }
+      }, 1000);
+    }
+
+    // Inicializa o temporizador ao carregar a página
+    window.onload = function() {
+      updateTimer();
+    };
+  </script>
 </body>
 </html>
