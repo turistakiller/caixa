@@ -14,34 +14,37 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #ffff;
+      background-color: #f4f4f4;
       font-family: 'Montserrat', sans-serif; /* Usando a fonte Montserrat */
     }
 
     .container {
-      max-height: 400px; /* Defina a altura máxima para ativar a barra de rolagem */
-      overflow-y: auto; /* Adicione uma barra de rolagem vertical */
+      max-width: 600px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .header {
-      background-color: #008000;
-      color: #FFFFFF;
+      background-color: #004466;
+      color: #fff;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
       text-align: center;
-      margin: 20px 0;
+      margin-bottom: 30px;
     }
 
     .header h1 {
-      font-size: 24px;
+      font-size: 32px;
       margin: 0;
     }
 
     .info {
       margin: 10px;
       font-weight: bold;
-      font-size: 13px;
+      font-size: 16px;
       text-align: justify;
     }
 
@@ -75,43 +78,25 @@
       }
     }
 
-    .date-list {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    .date-item {
-      background-color: #008000;
-      color: #FFFFFF;
-      padding: 15px;
-      border-radius: 5px;
-      margin: 20px 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .pendente {
-      background-color: #008000;
-    }
-
-    /* Novos estilos para a seção de saldo e mensagem de depósito */
     .balance-section {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .balance {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .deposit-message {
       font-weight: bold;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
+      <h1>Banco Elegante</h1>
       <!-- Seção para o saldo e mensagem de depósito -->
       <div class="balance-section">
         <div class="balance">
@@ -122,6 +107,7 @@
         </div>
       </div>
       <!-- Fim da seção de saldo e mensagem de depósito -->
+    </div>
   </div>
 </body>
 </html>
